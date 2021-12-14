@@ -1,0 +1,104 @@
+.body{
+    background-image: linear-gradient(to bottom right, #7A88FF, #7AFFAF) !important;
+}
+
+.form-box{
+    padding-top: 20px;
+    padding-left: 10px;
+    color: white
+}
+.form-input{
+    position: relative;
+}
+
+.form-input input{
+    color: white;
+    width: 380px;
+    height: 35px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    box-shadow: none;
+    border: 1px solid #3b3b3b;
+    border-radius: 30px;
+    margin-bottom: 0;
+    background-color: #3b3b3b;
+}
+
+.form-input span{
+    position: absolute;
+    top: 5px;
+    padding-left: 15px;
+}
+
+.form-input span i{
+    color: white;
+}
+
+.my-btn{
+  background: none;
+  padding: 0px;
+  border: none;
+}
+
+.heart{
+    color: #de64a9
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+#first-row{
+    margin-top: 20px;
+}
+
+#second-row{
+    margin-top: 20px;
+}
+
+#result-header{
+ margin-top: 20px;
+ margin-left: 20px;
+}
+
+#header{
+ margin-left:10px;
+}
+
+#select{
+ margin-top: 10px;
+ margin-left: 8px;
+}

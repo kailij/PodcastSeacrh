@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1" id="header">Start Your Podcast Searching Here!</span>
+    </nav>
+    <div class="input-group">
+        <form  class="form-box" method="post" action="/">
+            <div  class="form-input">
+                <button class="my-btn" type="submit" id="inputTextBtn">
+                <span><i  class="fas fa-search"></i></span>
+                </button>
+                <input name="submit-query" id="inputFile" type="text" placeholder="Search..."/>
+            </div>
+             <select id="select" class="form-select form-select-sm" aria-label=".form-select-sm example" name="genre">
+              <option selected value="all">All Genre</option>
+              <option value="Alternative Health">Alternative Health</option>
+              <option value="Amateur">Amateur</option>
+              <option value="Arts">Arts</option>
+              <option value="Automotive">Automotive</option>
+              <option value="Aviation">Aviation</option>
+              <option value="Buddhism">Buddhism</option>
+              <option value="Business">Business</option>
+              <option value="Business News">Business News</option>
+              <option value="Careers">Careers</option>
+              <option value="Christianity">Christianity</option>
+              <option value="College & High School">College & High School</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Design">Design</option>
+              <option value="Education">Education</option>
+              <option value="Educational Technology">Educational Technology</option>
+              <option value="Fashion & Beauty">Fashion & Beauty</option>
+              <option value="Fitness & Nutrition">Fitness & Nutrition</option>
+              <option value="Food">Food</option>
+              <option value="Gadgets">Gadgets</option>
+              <option value="Games & Hobbies">Games & Hobbies</option>
+              <option value="Government & Organizations">Government & Organizations</option>
+              <option value="Health">Health</option>
+              <option value="Higher Education">Higher Education</option>
+              <option value="Hinduism">Hinduism</option>
+             <option value="History">History</option>
+             <option value="Hobbies">Hobbies</option>
+             <option value="Investing">Investing</option>
+             <option value="Islam">Islam</option>
+             <option value="Judaism">Judaism</option>
+             <option value="Kinds & Family">Kinds & Family</option>
+             <option value="Literature">Literature</option>
+             <option value="Local">Local</option>
+             <option value="Management & Marketing">Management & Marketing</option>
+             <option value="Medicine">Medicine</option>
+             <option value="Music">Music</option>
+             <option value="National">National</option>
+             <option value="Natural Sciences">Natural Sciences</option>
+             <option value="News & Politics">News & Politics</option>
+             <option value="Non-Profit">Non-Profit</option>
+             <option value="Outdoor">Outdoor</option>
+             <option value="Performing">Performing</option>
+             <option value="Philosophy">Philosophy</option>
+             <option value="Podcasting">Podcasting</option>
+             <option value="Professional">Professional</option>
+             <option value="Regional">Regional</option>
+             <option value="Religion & Spirituality">Religion & Spirituality</option>
+             <option value="Science & Medicine">Science & Medicine</option>
+             <option value="Self-Help">Self-Help</option>
+             <option value="Sexuality">Sexuality</option>
+             <option value="Shopping">Shopping</option>
+             <option value="Social Sciences">Social Sciences</option>
+             <option value="Society & Culture">Society & Culture</option>
+             <option value="Spirituality">Spirituality</option>
+             <option value="Tech News">Tech News</option>
+             <option value="Technology">Technology</option>
+             <option value="Training">Training</option>
+             <option value="TV & Film">TV & Film</option>
+             <option value="Video Games">Video Games</option>
+             <option value="Visual">Visual</option>
+            </select>
+        </form>
+    </div>
+    {% if queryRes %}
+        <div id="result-header">Top 8 results we found for you:</div>
+        <div class="row" id="first-row">
+          {% if queryRes|length > 0 and queryRes[0] %}
+          <div class="column">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{queryRes[0]["Name"]}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{queryRes[0]["Genre"]}}</h6>
+                  <p class="card-text">{{queryRes[0]["Description"]}}</p>
+                  <i class="fas fa-heart heart"></i><span> {{queryRes[0]["Rating"]}}</span><span>({{queryRes[0]["Rating_Volume"]}})</span>
+             </div>
+            </div>
+        </div>
+            {% endif %}
+          {% if queryRes|length > 1 and queryRes[1] %}
+          <div class="column">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{queryRes[1]["Name"]}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{queryRes[1]["Genre"]}}</h6>
+                  <p class="card-text">{{queryRes[1]["Description"]}}</p>
+                  <i class="fas fa-heart heart"></i><span> {{queryRes[1]["Rating"]}}</span><span>({{queryRes[1]["Rating_Volume"]}})</span>
+             </div>
+            </div>
+        </div>
+            {% endif %}
+          {% if queryRes|length > 2 and queryRes[2] %}
+          <div class="column">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{queryRes[2]["Name"]}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{queryRes[2]["Genre"]}}</h6>
+                  <p class="card-text">{{queryRes[2]["Description"]}}</p>
+                  <i class="fas fa-heart heart"></i><span> {{queryRes[2]["Rating"]}}</span><span>({{queryRes[2]["Rating_Volume"]}})</span>
+             </div>
+            </div>
+        </div>
+            {% endif %}
+          {% if queryRes|length > 3 and queryRes[3] %}
+          <div class="column">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{queryRes[3]["Name"]}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{queryRes[3]["Genre"]}}</h6>
+                  <p class="card-text">{{queryRes[3]["Description"]}}</p>
+                  <i class="fas fa-heart heart"></i><span> {{queryRes[3]["Rating"]}}</span><span>({{queryRes[3]["Rating_Volume"]}})</span>
+             </div>
+            </div>
+        </div>
+            {% endif %}
+        </div>
+        <div class="row" id="second-row">
+          {% if queryRes|length > 4 and queryRes[4] %}
+          <div class="column">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{queryRes[4]["Name"]}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{queryRes[4]["Genre"]}}</h6>
+                  <p class="card-text">{{queryRes[4]["Description"]}}</p>
+                  <i class="fas fa-heart heart"></i><span> {{queryRes[4]["Rating"]}}</span><span>({{queryRes[4]["Rating_Volume"]}})</span>
+             </div>
+            </div>
+        </div>
+            {% endif %}
+          {% if queryRes|length > 5 and queryRes[5] %}
+          <div class="column">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{queryRes[5]["Name"]}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{queryRes[5]["Genre"]}}</h6>
+                  <p class="card-text">{{queryRes[5]["Description"]}}</p>
+                  <i class="fas fa-heart heart"></i><span> {{queryRes[5]["Rating"]}}</span><span>({{queryRes[5]["Rating_Volume"]}})</span>
+             </div>
+            </div>
+        </div>
+            {% endif %}
+          {% if queryRes|length > 6 and queryRes[6] %}
+          <div class="column">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{queryRes[6]["Name"]}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{queryRes[0]["Genre"]}}</h6>
+                  <p class="card-text">{{queryRes[6]["Description"]}}</p>
+                  <i class="fas fa-heart heart"></i><span> {{queryRes[6]["Rating"]}}</span><span>({{queryRes[6]["Rating_Volume"]}})</span>
+             </div>
+            </div>
+        </div>
+            {% endif %}
+          {% if queryRes|length > 7 and queryRes[7] %}
+          <div class="column">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{queryRes[7]["Name"]}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{queryRes[7]["Genre"]}}</h6>
+                  <p class="card-text">{{queryRes[7]["Description"]}}</p>
+                  <i class="fas fa-heart heart"></i><span> {{queryRes[7]["Rating"]}}</span><span>({{queryRes[7]["Rating_Volume"]}})</span>
+             </div>
+            </div>
+        </div>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div id="demo"></div>
+    <script>
+        var value = {{test|safe}};
+        var arrayLength = value.length;
+        for (var i = 0; i < arrayLength; i++) {
+            var regEx = new RegExp(value[i], "ig");
+            var replaceMask = "<mark>" + value[i] + "</mark>";
+            document.body.innerHTML = document.body.innerHTML.replaceAll(
+              regEx,
+              replaceMask
+            );
+        }
+    </script>
+{% endblock %}
